@@ -22,13 +22,12 @@ export default function Home() {
         <div className="home">
             <h1 className="font-effect-anaglyph">SpaceX Launches</h1>
             <div className="body">
-                <Loading/>
-                {loading && <h3 className="font-effect-neon">loading...</h3>}
+                {loading && <Loading/>}
                 {!loading && data.launchesPast.map((launch, i) => {
-                    return <Card key={i} launch={launch}/>
+                    return <Card key={i} launch={launch} />
                 })}
             </div>
-            
+
 
         </div>
     )
