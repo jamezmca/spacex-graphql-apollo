@@ -1,0 +1,44 @@
+.container {
+    margin: 10px;
+    position: relative;
+    z-index: 10;
+    padding: 0 5px;
+    cursor: pointer;
+
+
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: rgb(188, 242, 255);
+    z-index: -1;
+    filter: blur(2px);
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    background: rgb(0, 0, 0);
+    z-index: -1;
+}
+
+.container:hover::before {
+    background: orange;
+    box-shadow: 0 0 2px 2px red;
+}
+
+.container img {
+    max-width: 100px;
+}
+
+.container p {
+    font-size: 0.8em;
+}
+
+.container h4,
+.container p {
+    padding: 2px 0px;
+}
