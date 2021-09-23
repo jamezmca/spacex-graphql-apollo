@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useLazyQuery, useQuery } from '@apollo/client'
 import { GET_LAUNCH_DETAILS, GET_PAST_LAUNCHES } from '../graphql/Queries'
 import Card from './Card'
+import Loading from './Loading'
 
 export default function Home() {
     const [launchID, setLaunchID] = useState('')
@@ -21,6 +22,7 @@ export default function Home() {
         <div className="home">
             <h1 className="font-effect-anaglyph">SpaceX Launches</h1>
             <div className="body">
+                <Loading/>
                 {loading && <h3 className="font-effect-neon">loading...</h3>}
                 {!loading && data.launchesPast.map((launch, i) => {
                     return <Card key={i} launch={launch}/>

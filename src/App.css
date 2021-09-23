@@ -4,7 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gemunu Libre', sans-serif;
-    background-color: rgb(1, 1, 24);
+    /* background: rgb(1, 1, 24); */
+    background: white;
 }
 
 .home {
