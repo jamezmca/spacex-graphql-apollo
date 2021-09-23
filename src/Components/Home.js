@@ -3,6 +3,7 @@ import { useLazyQuery, useQuery } from '@apollo/client'
 import { GET_LAUNCH_DETAILS, GET_PAST_LAUNCHES } from '../graphql/Queries'
 import Card from './Card'
 import Loading from './Loading'
+import Modal from './Modal'
 
 export default function Home() {
     const [launchID, setLaunchID] = useState('')
@@ -20,15 +21,15 @@ export default function Home() {
 
     return (
         <div className="home">
+            <Modal showModal={true} />
+
             <h1 className="font-effect-anaglyph">SpaceX Launches</h1>
             <div className="body">
-                {loading && <Loading/>}
+                {loading && <Loading />}
                 {!loading && data.launchesPast.map((launch, i) => {
                     return <Card key={i} launch={launch} />
                 })}
             </div>
-
-
         </div>
     )
 }
