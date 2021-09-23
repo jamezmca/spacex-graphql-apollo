@@ -7,6 +7,7 @@ import Modal from './Modal'
 
 export default function Home() {
     const [launchID, setLaunchID] = useState('')
+    const [showModal, setShowModal] = useState(false)
     const { loading, error, data } = useQuery(GET_PAST_LAUNCHES, {
         variables: {
             limit: 400
@@ -21,13 +22,16 @@ export default function Home() {
 
     return (
         <div className="home">
-            <Modal showModal={true} />
+            {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}
 
             <h1 className="font-effect-anaglyph">SpaceX Launches</h1>
             <div className="body">
                 {loading && <Loading />}
                 {!loading && data.launchesPast.map((launch, i) => {
-                    return <Card key={i} launch={launch} />
+                    return <Card key={i} 
+                                launch={launch} 
+                                setShowModal={setShowModal}
+                                setLaunchID={setLaunchID} />
                 })}
             </div>
         </div>
