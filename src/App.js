@@ -4,10 +4,8 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  HttpLink,
   // HttpLink
 } from '@apollo/client'
-
 
 function App() {
   const uri = 'https://api.spacex.land/graphql'
