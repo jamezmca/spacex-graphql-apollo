@@ -14,7 +14,6 @@ export default function Home() {
             limit: 400
         }
     })
-    console.log(loading, data)
 
     const [getLaunchDetails, { loading: loading2, error: error2, data: data2 }] = useLazyQuery(GET_LAUNCH_DETAILS, {
         variables: { id: launchID }
