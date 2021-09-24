@@ -26,8 +26,8 @@
 }
 
 .name {grid-area: name; text-align: center;}
-.description {grid-area: description; text-align: justify;}
-.mainImage {grid-area: mainImage; max-width: 60vw; align-self: center;}
+.description {grid-area: description;}
+.mainImage {grid-area: mainImage; max-width: 60vw; }
 .images {
     grid-area: images;
     display: flex;
@@ -40,22 +40,25 @@
 .images img {
     max-width: 100px;
     padding: 2px;
+    object-fit: cover;
 }
 
 @media (min-width: 600px) {
     .modal {
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         grid-template-areas:
         "name name"
-        "description mainImage "
-        "images images";
-        text-align: center;
+        "description description"
+        "mainImage images";
         padding: 20px;
     }
 
     .mainImage {
         max-width: 100%;
         padding-left: 5px;
+        align-self: center;
     }
+
+
 
 }

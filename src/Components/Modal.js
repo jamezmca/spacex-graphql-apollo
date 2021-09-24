@@ -34,7 +34,7 @@ export default function Modal({ showModal, setShowModal, loading, data }) {
             {!data ? Loading :
                 <div className={modalStyles.modal} >
                     <h1 className={modalStyles.name}>{data.launch.mission_name}</h1>
-                    <p className={modalStyles.descriptions}>{data.launch.details}</p>
+                    <h5 className={modalStyles.description}>{data.launch.details}</h5>
                     <img src={data.launch.links.flickr_images[0]}
                         alt={data.launch.mission_name}
                         className={modalStyles.mainImage} />
